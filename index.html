@@ -399,6 +399,50 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+
+<!-- Hero Image Animation Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const intro = document.getElementById('intro');
+  
+  // Parallax effect for hero image
+  function updateParallax() {
+    const scrolled = window.pageYOffset;
+    const parallax = scrolled * 0.3; // Adjust speed here
+    
+    if (intro) {
+      intro.style.transform = `translateY(${parallax}px)`;
+      
+      // Dynamic filter adjustment based on scroll
+      const filterValue = Math.max(1 - scrolled * 0.0005, 0.7);
+      intro.style.filter = `contrast(1.2) brightness(${1.1 + filterValue * 0.2}) saturate(1.1)`;
+    }
+  }
+  
+  // Smooth scroll-based animation
+  let ticking = false;
+  function requestTick() {
+    if (!ticking) {
+      requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }
+  
+  window.addEventListener('scroll', function() {
+    requestTick();
+    ticking = false;
+  });
+  
+  // Image clarity enhancement on load
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      if (intro) {
+        intro.classList.add('image-loaded');
+      }
+    }, 500);
+  });
+});
+</script>
   <!--==========================
     Intro Section    <strong>Phone:</strong>
   ============================-->
@@ -420,19 +464,18 @@ document.addEventListener('DOMContentLoaded', function() {
             <a href="https://youtu.be/CVYY67RJfos" class="venobox play-btn" data-vbtype="video" data-autoplay="true">
               <i class="fa fa-play"></i>
             </a>
-            <div class="countdown-container">
-              <div id="countdown" class="countdown-display"></div>
-            </div>
           </div>
           
           <div class="intro-meta mb-4">
-            <div class="intro-date">
-              <i class="fa fa-calendar"></i>
-              <span>December 17-18, 2025</span>
-            </div>
-            <div class="intro-location">
-              <i class="fa fa-map-marker"></i>
-              <span>Al-Zahraa University for Women – Karbala, Iraq</span>
+            <div class="intro-date-countdown">
+              <div class="intro-date">
+                <i class="fa fa-calendar"></i>
+                <span>December 17-18, 2025</span>
+              </div>
+              <div class="intro-countdown">
+                <i class="fa fa-clock-o"></i>
+                <div id="countdown" class="countdown-display"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -467,6 +510,84 @@ var countdownFunction = setInterval(function() {
   }
 }, 1000);
 </script>
+
+  <!-- Special Offers Section -->
+  <section id="offers" class="offers-section">
+    <div class="offers-bg-animation"></div>
+    <div class="container-fluid px-0">
+      <div class="row no-gutters">
+        <div class="col-12">
+          <div class="offers-wrapper">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-lg-8 col-md-12">
+                  <div class="offer-content">
+                    <div class="offer-badge">
+                      <span class="badge-icon">🌟</span>
+                      <span class="badge-text">Exclusive Offer</span>
+                    </div>
+                    <h2 class="offer-title">
+                      <span class="offer-highlight">Foreign Researchers</span>
+                      <span class="offer-main">Get 50% Discount</span>
+                      <span class="offer-plus">+ Free Accommodation</span>
+                    </h2>
+                    <div class="offer-benefits">
+                      <div class="benefit-item">
+                        <div class="benefit-icon">
+                          <i class="fas fa-percentage"></i>
+                        </div>
+                        <span>50% Off Publication Fee</span>
+                      </div>
+                      <div class="benefit-item">
+                        <div class="benefit-icon">
+                          <i class="fas fa-bed"></i>
+                        </div>
+                        <span>Complimentary Accommodation</span>
+                      </div>
+                      <div class="benefit-item">
+                        <div class="benefit-icon">
+                          <i class="fas fa-globe"></i>
+                        </div>
+                        <span>International Recognition</span>
+                      </div>
+                    </div>
+                    <div class="offer-cta">
+                      <a href="#Submission" class="offer-btn">
+                        <span class="btn-text">Submit Your Paper</span>
+                        <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+                      </a>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                  <div class="offer-visual">
+                    <div class="discount-circle">
+                      <div class="circle-inner">
+                        <div class="discount-text">
+                          <span class="discount-number">50</span>
+                          <span class="discount-percent">%</span>
+                        </div>
+                        <div class="discount-label">OFF</div>
+                      </div>
+                      <div class="circle-animation"></div>
+                    </div>
+                    <div class="floating-elements">
+                      <div class="float-item float-1">💼</div>
+                      <div class="float-item float-2">🏨</div>
+                      <div class="float-item float-3">📚</div>
+                      <div class="float-item float-4">🌍</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <main id="main">
     <!--==========================
       About Section
