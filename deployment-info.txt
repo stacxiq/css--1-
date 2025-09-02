@@ -1,0 +1,33 @@
+NTICT'2025 Conference Website - Deployment Information
+=====================================================
+
+🌐 Live URL: Will be updated after first deployment
+📅 Last Deployed: Not yet deployed
+🔄 Status: Ready for deployment
+
+📱 After deployment, your website will be available at:
+https://[your-username].github.io/ntict2025-conference
+
+🚀 To deploy:
+1. Push this repository to GitHub
+2. Enable GitHub Pages in repository settings
+3. The GitHub Action will automatically deploy on every push to main branch
+
+📋 Setup Instructions:
+1. Create a new repository on GitHub named 'ntict2025-conference'
+2. Push this code to the repository
+3. Go to Settings → Pages
+4. Select "GitHub Actions" as the source
+5. The deployment will start automatically
+
+✅ Features:
+- Automatic deployment on push to main branch
+- Modern responsive conference website
+- Loading screen and progress indicators
+- Mobile-optimized navigation
+- Professional design with Springer publication info
+
+🔗 Repository will be at: https://github.com/[your-username]/ntict2025-conference
+📊 Actions will be at: https://github.com/[your-username]/ntict2025-conference/actions
+
+This file will be automatically updated with the live URL after each successful deployment.
